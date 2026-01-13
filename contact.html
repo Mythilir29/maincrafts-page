@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Contact</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header>
+    <div class="logo">MainCrafts</div>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="apply.html">Apply</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="apply-section">
+<h2>Contact Us</h2>
+<form name="contactForm" class="apply-form" onsubmit="return validateForm()">
+    <input type="text" name="name" placeholder="Name">
+    <input type="email" name="email" placeholder="Email">
+    <textarea name="message" placeholder="Message"></textarea>
+    <button class="btn">Send</button>
+</form>
+<p id="msg" class="success-msg">Message Sent!</p>
+</section>
+
+<script>
+function validateForm(){
+    let n=document.forms["contactForm"]["name"].value;
+    let e=document.forms["contactForm"]["email"].value;
+    if(n==""||e==""){alert("Fill Name & Email");return false;}
+    document.getElementById("msg").style.display="block";
+    return false;
+}
+</script>
+</body>
+</html>
